@@ -1,0 +1,281 @@
+/* ==========================================================================
+   Checklist Page Styles
+   Mobile-first, uses CSS variables from style.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Progress Bar
+   -------------------------------------------------------------------------- */
+
+.checklist-progress {
+  position: sticky;
+  top: 70px;
+  z-index: 99;
+  background: var(--white);
+  padding: 16px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.checklist-progress__bar {
+  height: 8px;
+  background: var(--gray-100);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.checklist-progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #ff9800);
+  border-radius: 50px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+.checklist-progress__info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--gray-500);
+}
+
+#progress-percent {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   2. Phase Sections
+   -------------------------------------------------------------------------- */
+
+.checklist-phase {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.checklist-phase:nth-child(even) {
+  background: var(--gray-50);
+}
+
+.checklist-phase__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.checklist-phase__number {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.checklist-phase__title {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.checklist-phase__subtitle {
+  font-size: 0.88rem;
+  color: var(--gray-500);
+}
+
+.checklist-phase__count {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: var(--gray-400);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.checklist-phase__items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Checklist Items
+   -------------------------------------------------------------------------- */
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-100);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.checklist-item:hover {
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-sm);
+}
+
+.checklist-item__checkbox {
+  display: none;
+}
+
+.checklist-item__check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-300);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.checklist-item__check::after {
+  content: '';
+  width: 12px;
+  height: 6px;
+  border-left: 2.5px solid var(--white);
+  border-bottom: 2.5px solid var(--white);
+  transform: rotate(-45deg) scale(0);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: absolute;
+  top: 7px;
+}
+
+.checklist-item__checkbox:checked ~ .checklist-item__check {
+  background: var(--green);
+  border-color: var(--green);
+  animation: checkBounce 0.3s ease;
+}
+
+.checklist-item__checkbox:checked ~ .checklist-item__check::after {
+  transform: rotate(-45deg) scale(1);
+}
+
+.checklist-item__text {
+  font-size: 0.95rem;
+  color: var(--gray-700);
+  transition: all 0.2s;
+}
+
+.checklist-item__checkbox:checked ~ .checklist-item__text {
+  text-decoration: line-through;
+  color: var(--gray-400);
+}
+
+/* Checked state for the whole label/item */
+.checklist-item:has(.checklist-item__checkbox:checked) {
+  background: var(--green-light);
+  border-color: var(--green-light);
+}
+
+/* --------------------------------------------------------------------------
+   4. Check Animation
+   -------------------------------------------------------------------------- */
+
+@keyframes checkBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Responsive - Tablet (768px+)
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .checklist-phase__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .checklist-progress {
+    position: sticky;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Print Styles
+   -------------------------------------------------------------------------- */
+
+@media print {
+  header,
+  footer,
+  .floating-cta,
+  .whatsapp-float,
+  .hero,
+  .breadcrumb,
+  .mid-cta,
+  .form-section,
+  .faq-section,
+  .checklist-progress,
+  #download,
+  nav,
+  .top-bar,
+  .hamburger {
+    display: none !important;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  body::before {
+    content: "Verhuischecklist 2026 - Verhuisbedrijf Op Maat";
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+  }
+
+  .checklist-phase {
+    break-inside: avoid;
+    padding: 20px 0;
+  }
+
+  .checklist-item {
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    page-break-inside: avoid;
+  }
+
+  .checklist-item__check {
+    border: 2px solid #333;
+    width: 20px;
+    height: 20px;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .checklist-item__checkbox:checked ~ .checklist-item__check {
+    background: #333 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .checklist-phase__number {
+    background: #333 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline | Verhuisbedrijf Op Maat</title>
+  <meta name="theme-color" content="#1a3c6e">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #1a3c6e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+    }
+    .offline-container {
+      max-width: 480px;
+    }
+    .offline-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.6;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1a3c6e;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    .phone-link {
+      display: inline-block;
+      background-color: #f57c00;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+    }
+    .phone-link:hover {
+      background-color: #e06800;
+    }
+    .retry-btn {
+      display: block;
+      margin: 1.5rem auto 0;
+      background: none;
+      border: 2px solid #1a3c6e;
+      color: #1a3c6e;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.65rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .retry-btn:hover {
+      background-color: #1a3c6e;
+      color: #ffffff;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
+  <main id="main-content">
+  <div class="offline-container">
+    <div class="offline-icon">&#128268;</div>
+    <h1>U bent offline</h1>
+    <p>Het lijkt erop dat u geen internetverbinding heeft. Controleer uw verbinding en probeer het opnieuw.</p>
+    <p>U kunt ons ook direct bellen:</p>
+    <a href="tel:0852121999" class="phone-link">085 212 1999</a>
+    <button class="retry-btn" onclick="window.location.reload()">Opnieuw proberen</button>
+  </div>
+  </main>
+</body>
+</html>

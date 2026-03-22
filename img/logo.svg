@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" fill="none">
+  <!-- Swoosh -->
+  <path d="M18 95 C18 95, 30 50, 75 35 C95 28, 110 32, 110 32 L95 22 C95 22, 55 10, 18 95Z" fill="#4AB3F4"/>
+  <path d="M18 95 C18 95, 60 105, 120 80 C145 70, 155 55, 155 55 L145 62 C145 62, 80 100, 18 95Z" fill="#4AB3F4"/>
+  <!-- House body -->
+  <path d="M45 72 L45 50 L80 30 L115 50 L115 72 Z" fill="#6B7B8D"/>
+  <!-- House roof -->
+  <path d="M38 52 L80 24 L122 52 L115 52 L80 30 L45 52 Z" fill="#4AB3F4"/>
+  <!-- Windows -->
+  <rect x="62" y="48" width="8" height="8" rx="1" fill="white"/>
+  <rect x="75" y="48" width="8" height="8" rx="1" fill="white"/>
+  <rect x="62" y="60" width="8" height="8" rx="1" fill="white"/>
+  <rect x="75" y="60" width="8" height="8" rx="1" fill="white"/>
+  <!-- Text: Verhuisbedrijf -->
+  <text x="140" y="55" font-family="Inter, Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#4AB3F4">Verhuisbedrijf</text>
+  <!-- Text: Op Maat -->
+  <text x="210" y="85" font-family="Inter, Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#1B3A5C">Op Maat</text>
+</svg>
