@@ -10,6 +10,24 @@
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('.nav');
 
+  // Move nav outside header on mobile so it escapes the backdrop-filter stacking context
+  var navParent = nav ? nav.parentNode : null;
+  var navNextSibling = nav ? nav.nextElementSibling : null;
+  function handleNavPlacement() {
+    if (!nav) return;
+    if (window.innerWidth < 992) {
+      if (nav.parentNode !== document.body) {
+        document.body.appendChild(nav);
+      }
+    } else {
+      if (nav.parentNode === document.body && navParent) {
+        navParent.insertBefore(nav, navNextSibling);
+      }
+    }
+  }
+  handleNavPlacement();
+  window.addEventListener('resize', handleNavPlacement);
+
   if (hamburger && nav) {
     function toggleMenu() {
       var isOpen = !nav.classList.contains('active');
