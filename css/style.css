@@ -47,6 +47,8 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px;touch-action:manipulation;-ms-touch-action:manipulation}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--gray-600);line-height:1.6;background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
 img{max-width:100%;height:auto;display:block}
+iframe,video,svg{max-width:100%}
+.two-col>*,.zigzag>*,.hero .container>*,.packing-layout>*,.contact-info>*,.footer__grid>*,.services-grid>*,.advantages>*,.reviews-grid>*,.regio-grid>*,.steps>*,.tips-grid>*,.extra-services-grid>*,.diensten-3col>*,.packages-grid>*,.features-grid-section .features-grid>*,.process-section .process-timeline>*{min-width:0}
 a{color:var(--primary);text-decoration:none;transition:color var(--transition-fast)}
 a:hover{color:var(--accent)}
 ul,ol{list-style:none}
@@ -207,7 +209,8 @@ a.top-bar__item:hover{color:var(--white)}
 /* FORM */
 .form-section{background:linear-gradient(180deg,var(--gray-50) 0%,var(--white) 100%);padding:48px 0;padding-bottom:90px}
 .form-with-image{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
-.form-image{display:none;position:relative}
+.form-with-image>*{min-width:0}
+.form-image{display:none;position:relative;min-width:0}
 .form-image img{width:100%;height:400px;object-fit:cover;border-radius:var(--radius-2xl)}
 .form-image__trust{position:absolute;bottom:20px;left:20px;right:20px;display:flex;align-items:center;gap:16px;padding:20px 24px;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-radius:var(--radius-lg);box-shadow:var(--shadow-xl)}
 .form-image__score{width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--white);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;flex-shrink:0}
@@ -219,9 +222,9 @@ a.top-bar__item:hover{color:var(--white)}
 .form-card h2{font-size:1.5rem;margin-bottom:6px;letter-spacing:-0.02em}
 .form-card>p{color:var(--gray-500);font-size:.92rem;margin-bottom:28px}
 .form-grid{display:grid;grid-template-columns:1fr;gap:16px}
-.form-group{display:flex;flex-direction:column}
+.form-group{display:flex;flex-direction:column;min-width:0}
 .form-group label{font-size:.82rem;font-weight:600;color:var(--gray-700);margin-bottom:6px}
-.form-group input,.form-group select,.form-group textarea{padding:14px 16px;border:1.5px solid var(--gray-200);border-radius:var(--radius-md);font-size:1rem;font-family:inherit;transition:all var(--transition);background:var(--gray-50);color:var(--gray-700);-webkit-appearance:none}
+.form-group input,.form-group select,.form-group textarea{min-width:0;max-width:100%;box-sizing:border-box;padding:14px 16px;border:1.5px solid var(--gray-200);border-radius:var(--radius-md);font-size:1rem;font-family:inherit;transition:all var(--transition);background:var(--gray-50);color:var(--gray-700);-webkit-appearance:none}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(12,35,64,.08);background:var(--white)}
 .form-group input::placeholder{color:var(--gray-400)}
 .form-group textarea{resize:vertical;min-height:100px}
@@ -249,7 +252,8 @@ a.top-bar__item:hover{color:var(--white)}
 a.contact-info__item:hover{color:inherit}
 .contact-info__icon{width:48px;height:48px;background:var(--accent-light);color:var(--accent);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
 .contact-info__item h4{font-size:.92rem;margin-bottom:2px}
-.contact-info__item p,.contact-info__item a{font-size:.9rem;color:var(--gray-500)}
+.contact-info__item p,.contact-info__item a{font-size:.9rem;color:var(--gray-500);overflow-wrap:anywhere;word-break:break-word;min-width:0}
+.contact-info__item>div{min-width:0;flex:1}
 
 /* M3 CALCULATOR */
 .calc-section{background:var(--white);border-radius:var(--radius-xl);padding:28px 20px;box-shadow:var(--shadow-sm);border:1px solid var(--gray-100);margin-bottom:20px}
