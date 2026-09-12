@@ -121,29 +121,33 @@
         data[key] = value;
       });
 
-      // Submit to FormSubmit.co endpoint
-      fetch('https://formsubmit.co/ajax/info@verhuisbedrijfopmaat.com', {
+      data['access_key'] = 'e1f203b5-5f89-47e5-9ab8-4241594af17d';
+      data['subject'] = 'Nieuwe offerteaanvraag via verhuisbedrijfopmaat.nl';
+      data['from_name'] = 'Verhuisbedrijf Op Maat';
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       })
       .then(function(response) {
-        if (response.ok) {
-          form.style.display = 'none';
-          var success = form.nextElementSibling;
-          if (success && success.classList.contains('form-success')) {
-            success.classList.add('show');
+        return response.json().then(function(json) {
+          if (response.ok && json.success) {
+            form.style.display = 'none';
+            var success = form.nextElementSibling;
+            if (success && success.classList.contains('form-success')) {
+              success.classList.add('show');
+            }
+          } else {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert('Fout: ' + (json.message || 'Onbekende fout'));
           }
-        } else {
-          btn.textContent = originalText;
-          btn.disabled = false;
-          alert('Er is een fout opgetreden. Probeer het opnieuw of bel ons op 085 212 1999.');
-        }
+        });
       })
-      .catch(function() {
+      .catch(function(err) {
         btn.textContent = originalText;
         btn.disabled = false;
-        alert('Er is een fout opgetreden. Probeer het opnieuw of bel ons op 085 212 1999.');
+        alert('Verbindingsfout: ' + err.message);
       });
     });
   });
@@ -166,29 +170,33 @@
         data[key] = value;
       });
 
-      // Submit to FormSubmit.co endpoint
-      fetch('https://formsubmit.co/ajax/info@verhuisbedrijfopmaat.com', {
+      data['access_key'] = 'e1f203b5-5f89-47e5-9ab8-4241594af17d';
+      data['subject'] = 'Nieuwe offerteaanvraag via verhuisbedrijfopmaat.nl';
+      data['from_name'] = 'Verhuisbedrijf Op Maat';
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       })
       .then(function(response) {
-        if (response.ok) {
-          contactForm.style.display = 'none';
-          var success = contactForm.nextElementSibling;
-          if (success && success.classList.contains('form-success')) {
-            success.classList.add('show');
+        return response.json().then(function(json) {
+          if (response.ok && json.success) {
+            contactForm.style.display = 'none';
+            var success = contactForm.nextElementSibling;
+            if (success && success.classList.contains('form-success')) {
+              success.classList.add('show');
+            }
+          } else {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert('Fout: ' + (json.message || 'Onbekende fout'));
           }
-        } else {
-          btn.textContent = originalText;
-          btn.disabled = false;
-          alert('Er is een fout opgetreden. Probeer het opnieuw of bel ons op 085 212 1999.');
-        }
+        });
       })
-      .catch(function() {
+      .catch(function(err) {
         btn.textContent = originalText;
         btn.disabled = false;
-        alert('Er is een fout opgetreden. Probeer het opnieuw of bel ons op 085 212 1999.');
+        alert('Verbindingsfout: ' + err.message);
       });
     });
   }
@@ -296,12 +304,15 @@
   }
 
   function loadAnalytics() {
-    // Google Analytics - configureer met uw GA4 Measurement ID
-    // Vervang GA4_MEASUREMENT_ID met uw werkelijke ID (bijv. G-XXXXXXXXXX)
-    // var script = document.createElement('script');
-    // script.src = 'https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID';
-    // script.async = true;
-    // document.head.appendChild(script);
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-76W73EDN9T';
+    script.async = true;
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-76W73EDN9T', { anonymize_ip: true });
   }
 
   // Auto-load analytics if previously consented
