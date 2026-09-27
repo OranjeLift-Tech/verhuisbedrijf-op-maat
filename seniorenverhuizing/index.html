@@ -136,7 +136,7 @@
     ]
   }
   </script>
-  <link rel="preload" as="image" href="../img/senioren-verhuizing.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../img/senioren-verhuizing.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -211,7 +211,8 @@
   <main id="main-content">
 
   <!-- Hero -->
-  <section class="hero hero--fullwidth" style="background-image:url('../img/senioren-verhuizing.webp')">
+  <section class="hero hero--fullwidth">
+  <img class="hero__bg" src="../img/senioren-verhuizing.webp" alt="" fetchpriority="high" loading="eager" decoding="async">
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container">
       <div>

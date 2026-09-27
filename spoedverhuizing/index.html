@@ -136,7 +136,7 @@
     ]
   }
   </script>
-  <link rel="preload" as="image" href="../img/team-dozen-lopen.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../img/team-dozen-lopen.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -211,7 +211,8 @@
   <main id="main-content">
 
   <!-- Hero -->
-  <section class="hero hero--fullwidth" style="background-image:url('../img/team-dozen-lopen.webp')">
+  <section class="hero hero--fullwidth">
+  <img class="hero__bg" src="../img/team-dozen-lopen.webp" alt="" fetchpriority="high" loading="eager" decoding="async">
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container">
       <div>

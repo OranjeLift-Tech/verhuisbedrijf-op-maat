@@ -30,7 +30,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="../img/team-koffiepauze.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../img/team-koffiepauze.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
@@ -175,7 +175,8 @@
   <main id="main-content">
 
   <!-- Hero -->
-  <section class="hero hero--fullwidth" style="background-image:url('../img/team-koffiepauze.webp')" role="img" aria-label="Het team van Verhuisbedrijf Op Maat tijdens een koffiepauze">
+  <section class="hero hero--fullwidth" role="img" aria-label="Het team van Verhuisbedrijf Op Maat tijdens een koffiepauze">
+  <img class="hero__bg" src="../img/team-koffiepauze.webp" alt="" fetchpriority="high" loading="eager" decoding="async">
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container">
       <div>

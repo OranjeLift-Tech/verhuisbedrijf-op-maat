@@ -150,7 +150,7 @@
     ]
   }
   </script>
-  <link rel="preload" as="image" href="../img/bank-tillen-straat.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../img/bank-tillen-straat.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -225,7 +225,8 @@
   <main id="main-content">
 
   <!-- Hero -->
-  <section class="hero hero--fullwidth" style="background-image:url('../img/bank-tillen-straat.webp')">
+  <section class="hero hero--fullwidth">
+  <img class="hero__bg" src="../img/bank-tillen-straat.webp" alt="" fetchpriority="high" loading="eager" decoding="async">
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container">
       <div>

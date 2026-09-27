@@ -82,7 +82,7 @@
     ]
   }
   </script>
-  <link rel="preload" as="image" href="../img/klant-sleutel-close.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../img/klant-sleutel-close.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -147,7 +147,8 @@
   <main id="main-content">
 
   <!-- Hero -->
-  <section class="hero hero--fullwidth" style="background-image:url('../img/klant-sleutel-close.webp')">
+  <section class="hero hero--fullwidth">
+  <img class="hero__bg" src="../img/klant-sleutel-close.webp" alt="" fetchpriority="high" loading="eager" decoding="async">
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container">
       <div>

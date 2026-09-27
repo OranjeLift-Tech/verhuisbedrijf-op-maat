@@ -151,7 +151,7 @@
     ]
   }
   </script>
-  <link rel="preload" as="image" href="../img/team-koffiepauze.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../img/team-koffiepauze.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -227,7 +227,7 @@
 
   <!-- Hero -->
   <section class="hero hero--fullwidth">
-    <div style="position:absolute;inset:0;background:url('../img/team-koffiepauze.webp') center/cover no-repeat;transform:scaleX(-1);z-index:0;"></div>
+    <img class="hero__bg" src="../img/team-koffiepauze.webp" alt="" fetchpriority="high" loading="eager" decoding="async" style="transform:scaleX(-1);">
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="container">
       <div>
