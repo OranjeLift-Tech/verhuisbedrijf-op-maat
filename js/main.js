@@ -106,6 +106,12 @@
 
   // --- Form handling ---
   document.querySelectorAll('.quote-form').forEach(function(form) {
+    var honeypot = document.createElement('input');
+    honeypot.type = 'checkbox';
+    honeypot.name = 'botcheck';
+    honeypot.style.display = 'none';
+    form.appendChild(honeypot);
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -155,6 +161,12 @@
   // --- Contact form handling ---
   var contactForm = document.querySelector('.contact-form');
   if (contactForm) {
+    var contactHoneypot = document.createElement('input');
+    contactHoneypot.type = 'checkbox';
+    contactHoneypot.name = 'botcheck';
+    contactHoneypot.style.display = 'none';
+    contactForm.appendChild(contactHoneypot);
+
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
