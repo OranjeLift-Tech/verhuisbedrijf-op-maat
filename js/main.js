@@ -25,7 +25,7 @@
       }
     }
   }
-  handleNavPlacement();
+  requestAnimationFrame(handleNavPlacement);
   window.addEventListener('resize', handleNavPlacement);
 
   if (hamburger && nav) {
